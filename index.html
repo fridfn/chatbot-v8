@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-32x32.png">
+  <meta name="viewport" content="width=device-width, initial-scale-1.0, user-scalable=no"/>
+  <title>Chatting Bot</title>
+  <meta name="author" content="Farid Fathoni N">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@600&display=swap" rel="stylesheet"/>
+ </head>
+ <body id="body" class="body" no-translate="true">
+  <h1 class="err">MAAF WEBSITE INI TIDAK TERSEDIA UNTUK VERSI DESKTOP</h1>
+  <div class="blurLayer" id="layer"></div>
+   <div class="containerAlert">
+    <div class="myAlert" id="jawaban">
+     <p class="infoAlert" id="myDescription">INFO !</p>
+     <p class="textAlert" id="textWhite">PESAN ALERT !</p>
+     <div class="cta-alert">
+      <button class="btn-alert" id="myButton">Ok</button>
+     </div>
+    </div>
+   </div>
+   <div class="containerMail" id="containerId">
+    <div class="header-email" id="profileSection">
+     <div class="box-header-email">
+      <p id="textWhite" class="title-header-email">Contact Developer</p>
+     </div>
+    </div>
+      <div class="boxEmail" id="cards-color">
+        <div class="emailInfo" id="bgColor">
+         <p class="infoTitle" id="textWhite">Judul email :</p>
+         <p class="judulEmail" id="myDescription" contenteditable="true"></p>
+        </div>
+        <p class="infoTitle" id="textWhite">Tuliskan pesan</p>
+         <div class="wrapperEmail" >
+          <p class="inputEmail" id="myDescription" contenteditable="true"></p>
+          <div class="spanEmail">
+           <p class="footerEmail" id="textWhite"></p>
+           <button class="btn-email" id="myButton" onclick="sendEmail()">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+   <div class="menu">
+   <div class="headerMenu">
+    <div class="arrow-button">
+    <ion-icon name="arrow-back-sharp" class="arrow-menu" onclick="DeveloperMenu()" id="textWhite"></ion-icon>
+   </div>
+     <ion-icon name="moon" class="main-icon" id="moon" onclick="switchTheme()"></ion-icon>
+     <ion-icon name="person-add" class="main-icon" id="qr" onclick="opsi()"></ion-icon>
+     <ion-icon name="heart" class="main-icon" id="brush" onclick="opsi()"></ion-icon>
+    </div>
+     <div class="profileSection" id="profileSection">
+     <div class="profileImgBox">
+      <div class="blur-profile"></div>
+       <img src="Developericon.webp" class="imgProfile" onclick="perbesarGambar()">
+      <div class="userInfo">
+      <p class="nameUser">Farid Fn</p>
+      <p class="statusUser">Status</p>
+      </div>
+     </div>
+    </div>
+    <div class="contentMenu">
+     <div class="cards">
+      <p id="bio" class="infoTxt"><ion-icon name="person"></ion-icon>&nbsp;About Me</p>
+      
+       <div class="description">
+        <div class="wrapper-text">
+         <p class="descriptionText" id="descriptionSatu" onclick="descriptionClick()">DESKRIPSI 1</p>
+        </div>
+       </div>
+       
+      <div id="text1" class="description">
+        <div class="wrapper-text">
+         <div class="arrow"></div>
+         <p class="descriptionText" id="descriptionDua">DESKRIPSI 2</p>
+        </div>
+       </div>
+       
+      <div id="text2" class="description">
+        <div class="wrapper-text">
+         <div class="arrow"></div>
+         <p class="descriptionText" id="descriptionTiga">DESKRIPSI 3</p>
+        </div>
+       </div>
+       
+      </div>
+       <div class="underline"></div>
+       
+       <p id="bio" class="infoTxt"><ion-icon name="sparkles"></ion-icon>&nbsp;Favorite Thing</p>
+       <div class="container-favorite">
+       <div class="cards-favorite">
+        
+        <div class="favorite-items">
+         <div class="rowFav fav1" id="arrowFavorite"></div>
+         <div class="wrapperFav">
+           <ion-icon name="game-controller"></ion-icon>
+           <p class="favtxt" id="textWhite">Game</p>
+         </div>
+          <div class="descFav row1" id="cards-color">
+           <p id="desc1">FAVORITE 1</p>
+          </div>
+        </div>
+        
+        <div class="favorite-items">
+         <div class="rowFav fav2" id="arrowFavorite"></div>
+         <div class="wrapperFav">
+           <ion-icon name="musical-notes"></ion-icon>
+           <p class="favtxt" id="textWhite">Music</p>
+         </div>
+         <div class="descFav row2" id="cards-color">
+           <p id="desc2">FAVORITE 2</p>
+          </div>
+        </div>
+        
+        <div class="favorite-items">
+         <div class="rowFav fav3" id="arrowFavorite"></div>
+         <div class="wrapperFav">
+           <ion-icon name="code-slash"></ion-icon>
+           <p class="favtxt" id="textWhite">Coding</p>
+         </div>
+         <div class="descFav row2" id="cards-color">
+           <p id="desc3">FAVORITE 3</p>
+         </div>
+        </div>
+        
+        <div class="favorite-items">
+         <div class="rowFav fav4" id="arrowFavorite"></div>
+         <div class="wrapperFav">
+          <ion-icon name="bed"></ion-icon>
+           <p class="favtxt" id="textWhite">Sleep</p>
+         </div>
+         <div class="descFav row4" id="cards-color">
+           <p id="desc4">FAVORITE 4</p>
+          </div>
+        </div>
+        
+       </div>
+      </div>
+     <!--containerFavorite end-->
+    
+    <div class="underline"></div>
+    
+     <p id="bio" class="infoTxt"><ion-icon name="folder"></ion-icon>&nbsp;My Collection Website</p>
+    <div class="my-koleksi">
+      <div class="koleksi-box">
+       <div class="content-koleksi koleksi1" id="cards-color">
+        <ion-icon name="tv" class="ico-koleksi"></ion-icon>
+        <p class="title-koleksi" id="textWhite">Contoh Judul website</p>
+       <div class="container-deskripsi-koleksi">
+        
+       <div class="box-deskripsi-koleksi-1" id="myDescription">
+        <p class="deskripsi-koleksi" id="deskripsi-1">deskripsi pertama</p>
+        </div>
+        
+        <div class="box-deskripsi-koleksi-2" id="myDescription">
+         <div class="container-arrow-koleksi">
+          <div class="arrow-koleksi" id="myDescription"></div>
+         </div>
+         
+         <div class="cards-deskripsi-2" id="myKoleksi">
+          <p class="deskripsi-koleksi" id="deskripsi-2">deskripsi ke dua</p>
+         </div>
+        </div>
+        
+        </div>
+      </div>
+      </div>
+      <div class="cta-koleksi">
+       <ion-icon name="chevron-back" class="ico-next" id="jawaban" onclick="undoKoleksi()"></ion-icon>
+       <button class="btn-koleksi" id="myButton">Launch !</button>
+       <ion-icon name="chevron-forward" class="ico-next" id="jawaban" onclick="nextKoleksi()"></ion-icon>
+      </div>
+     </div>
+    
+    <div class="underline"></div>
+    
+    <div class="footer-container">
+    <p id="bio" class="infoTxt"><ion-icon name="book"></ion-icon>&nbsp;Explore Properties</p>
+     <div class="footer-box">
+      
+     <div class="wrapper-box-footer" id="cards-color">
+     <div class="wrapper-footer">
+      <div class="footer-box-text" id="myDescription" onclick="footerBoxOne()">
+        <li class="footer-li">
+         <a class="footer-text" id="textWhite">About Me</a>
+        </li>
+       </div>
+       <div class="footer-box-text" id="myDescription" onclick="footerBoxSecond()">
+        <li class="footer-li">
+         <a class="footer-text" id="textWhite">Privacy Policy</a>
+         </li>
+       </div>
+       <div class="footer-box-text" id="myDescription" onclick="footerBoxThird()">
+        <li class="footer-li">
+         <a class="footer-text" id="textWhite">About this Website?</a>
+        </li>
+       </div>
+      </div>
+       
+      <div class="wrapper-footer-2">
+       <div class="footer-box-text" id="myDescription" onclick="footerBoxFour()">
+        <li class="footer-li">
+         <a class="footer-text" id="textWhite">Terms Of Service</a>
+        </li>
+       </div>
+       <div class="footer-box-text" id="myDescription" onclick="footerBoxFive()">
+        <li class="footer-li">
+         <a class="footer-text" id="textWhite">Contact Us</a>
+        </li>
+       </div>
+       <div class="footer-box-text" id="myDescription" onclick="footerBoxSix()">
+        <li class="footer-li">
+         <a class="footer-text" id="textWhite">Help</a>
+        </li>
+       </div>
+       </div>
+       <footer id="footers">
+        <p class="footer-class" id="textWhite">&copy;Copyrights 2023 All Rights Reserved.</p>
+       </footer>
+      </div>
+     </div>
+    </div>
+    
+    
+  </div>
+ </div>
+    
+   <div class="pembungkus-container">
+    <header>
+     <div class="headerBot">
+      <div class="imgboxs" id="imgBox" onclick="reactBot()">
+       <img src="boticon.webp" alt="FaBOT" id="img"/>
+      </div>
+      <div class="botInfo">
+        <p class="nameBot">Fabot Chat</p>
+        <p class="botStatus">Online</p>
+      </div>
+       <ion-icon class="headerIcon" id="mail" name="mail-sharp" onclick="openSendEmail()"></ion-icon>
+       <ion-icon class="headerIcon" id="ellips" name="ellipsis-vertical-sharp"></ion-icon>
+     </div>
+    </header>
+    <div class="container" id="containerId">
+      <div class="container-linear"></div>
+      <div class="container-love"></div>
+     <div class="wrapper" id="blue-bg">
+      <div class="containerInput">
+        <input class="input-jawaban" id="jawaban" type="text" placeholder="Ketikan Pesan" onkeyup="checkInput()" autocomplete="off"/>
+        <div class="barier"></div>
+        <button class="btn-bot" onclick="botStart()" id="myButton" disabled><ion-icon name="send-sharp"></ion-icon></button>
+       </div>
+       <div class="footer">
+         <p>This website is made only for learning in development a website, FaBot-Chat <u>17 July
+         Version.</u></p>
+       </div>
+     </div>
+     
+     <div class="container-sidebar" id="myKoleksi">
+      <div class="header-sidebar" id="blueHeaderUser">
+       <div class="box-header-user" id="textWhite">
+        <div class="img-box-user" id="textWhite">
+         <img src="profileicon.webp" class="img-user">
+        </div>
+       <div class="feature-sidebar">
+        <div class="menu-sidebar" onclick ="openSidebar()"></div>
+         <p class="sidebar-title" id="textWhite">USER FABOT</p>
+         <ion-icon name="moon" class="main-icon" id="moon" onclick="switchTheme()"></ion-icon>
+        </div>
+        <div class="box-info-user">
+         <div class="info-user">
+          <span class="text-usr say-user" id="textWhite">hallo,</span>
+          <span class="text-usr name-user" id="textWhite">unknown user</span>
+          <p class="user-email">unknown@gmail.com</p>
+         </div>
+        </div>
+       </div>
+       <div class="container-hobby-user">
+        <p class="text-hobby-user" id="textWhite">&nbsp;Favorite&nbsp;&nbsp;:</p>
+        <div class="wrapper-hobby-user">
+         <div class="box-hobby-user" id="box-hobby-clr">
+          <p class="text-hobby-user" id="textWhite">coding</p>
+         </div>
+         <div class="box-hobby-user" id="box-hobby-clr">
+          <p class="text-hobby-user" id="textWhite">game</p>
+         </div>
+         <div class="box-hobby-user" id="box-hobby-clr">
+          <p class="text-hobby-user" id="textWhite">Sleep</p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="content-sidebar" id="myKoleksi">
+       <div class="box-sidebar-items" onclick="openHome()">
+        <button class="btn-cta" disabled>
+        <ion-icon name="home" class="sidebar-icon" id="textWhite"></ion-icon>
+        <p class="text-sidebar" id="textWhite">Home</p>
+        </button>
+       </div>
+       <div class="box-sidebar-items" onclick="openProfile()">
+        <ion-icon name="person" class="sidebar-icon" id="textWhite"></ion-icon>
+        <p class="text-sidebar" id="textWhite">My Profile</p>
+       </div>
+       <div class="box-sidebar-items" onclick="opsi()">
+        <ion-icon name="book" class="sidebar-icon" id="textWhite"></ion-icon>
+        <p class="text-sidebar" id="textWhite">ChatBot Guide</p>
+       </div> 
+       <div class="box-sidebar-items" onclick="DeveloperMenu()">
+        <ion-icon name="id-card" class="sidebar-icon" id="textWhite"></ion-icon>
+        <p class="text-sidebar" id="textWhite">About Developer</p>
+       </div>
+       <div class="box-social-media">
+        <p class="text-usr" id="textWhite">Social Media</p>
+        <div class="box-item-sosmed">
+         <a class="item-icon-sosmed" href="https://www.facebook.com/bayuan.754"><i class="fab fa-facebook" id="textWhite"></i></a>
+         <a class="item-icon-sosmed" href="https://www.facebook.com/fridfn_"><i class="fab fa-instagram" id="textWhite"></i></a>
+         <a class="item-icon-sosmed" href="https://t.me/ShirakamiFubuki7"><i class="fab fa-telegram" id="textWhite"></i></a>
+         <a class="item-icon-sosmed" href="https://tiktok.com/@frdfnz"><i class="fab fa-tiktok"
+         id="textWhite"></i></a>
+        </div>
+       </div>
+      <div class="signin-box" id="blueHeaderUser" onclick="loginValidation()">
+       <ion-icon name="log-in" class="sidebar-icon" id="textWhite"></ion-icon>
+       <p class="signin-text" id="textWhite">Login</p>
+      </div>
+      </div>
+     </div>
+      
+      <div class="containerOpsi">
+       <div class="wrapperOpsi" id="myButton">
+        <div class="boxOpsi">
+        <p class="txtOpsi" onclick="opsi()"><ion-icon name="settings-sharp" id="ico"></ion-icon>&nbsp;Pengaturan</p>
+        </div>
+        <div class="boxOpsi">
+         <p class="txtOpsi" onclick="opsi()"><ion-icon name="share-social" id="ico"></ion-icon>&nbsp;Bagikan</p>
+        </div>
+        <div class="boxOpsi">
+         <p class="txtOpsi" onclick="opsi()"><ion-icon name="help-circle" id="ico"></ion-icon>&nbsp;Info bot</p>
+        </div>
+        <div class="boxOpsi">
+         <p class="txtOpsi" onclick="opsi()"><ion-icon name="trash" id="ico"></ion-icon>&nbsp;Bersihkan chat</p>
+        </div>
+       </div>
+      </div>
+       
+      
+     <div class="date">
+       <p>31 Mei 2023</p>
+     </div>
+     <div class="about">
+       <p><ion-icon name="lock-closed"></ion-icon> pesan dan riwayat chat terenkripsi secara end-to-end. tidak seorang pun di luar chat ini, termasuk developer yang dapat membaca atau melihatnya.</p>
+     </div>
+     <div class="containerChat" id="firstContentPertanyaan">
+      <div class="chatPertanyaans styleQuest" id="firstChatPertanyaan">
+        <div class="arrowQuest"></div>
+         <p id="firstPertanyaan">pertanyaan</p>
+         <p id="timeQuestion"></p>
+        </div>
+      </div>
+     <div class="containerChat" id="contentJawaban">
+        <div class="chatJawaban styleAsk" id="chatJawaban">
+         <div class="arrowAsk"></div>
+           <p id="textJawaban">Jawaban</p>
+           <span>
+            <p id="timeAsk"></p>
+            <ion-icon name="checkmark-done-sharp" id="check2" class="ceklisDua"></ion-icon>
+           </span>
+         </div>
+      </div>
+     <div class="containerChat" id="contentPertanyaan">
+       <div id="chatPertanyaan" class="chatPertanyaans styleQuest">
+        <div class="arrowQuest"></div>
+         <p id="textPertanyaan">pertanyaan kedua</p>
+         <p id="timeQuestion"></p>
+        </div>
+        <div class="sticker-chat">
+         <p class="time-sticker">05.06</p>
+        </div>
+        <div class="guess-picture">
+         <div class="forward-box">
+          <ion-icon name="arrow-redo"></ion-icon>
+         </div>
+        </div>
+      </div>
+    </div>
+   </div>
+  
+  <div class="container-user-page" id="containerId">
+   <div class="content-user-page">
+    <div class="headerMenu">
+     <div class="arrow-button">
+      <ion-icon name="arrow-back-sharp" class="arrow-menu" onclick="openProfile()" id="textWhite"></ion-icon>
+     </div>
+      <ion-icon name="moon" class="main-icon" id="moon" onclick="switchTheme()"></ion-icon>
+      <ion-icon name="person-add" class="main-icon" id="qr" onclick="opsi()"></ion-icon>
+      <ion-icon name="heart" class="main-icon" id="brush" onclick="opsi()"></ion-icon>
+     </div>
+     <div class="profileSection" id="profileSection">
+     <div class="profileImgBox">
+      <div class="blur-profile"></div>
+       <img src="profileicon.webp" class="imgProfile" onclick="perbesarGambar()">
+      <div class="userInfo">
+       <p class="nameUser">Name</p>
+       <p class="statusUser">Online</p>
+     </div>
+    </div>
+   </div>
+ <div class="body-content-user-page">
+  <div class="wrapper-user-page">
+   <div class="box-user-page" id="cards-color">
+     <p class="title-box-user-page">Personal Info</p>
+    <div class="wrapper-personal-box">
+     <div class="user-personal-box" id="textWhite">
+      <div class="user-personal-box-items">
+       <ion-icon name="person" class="main-icon"></ion-icon>
+      <div class="wrapper-txt-user-personal-box">
+        <p class="tiny-text">Full Name</p>
+        <p class="txt-user-personal-box" >Farid Fathoni N</p>
+       </div>
+      </div>
+      <div class="user-personal-box-items">
+       <ion-icon name="calendar" class="main-icon"></ion-icon>
+      <div class="wrapper-txt-user-personal-box">
+        <p class="tiny-text">Tanggal Ultah</p>
+        <p class="txt-user-personal-box" >29-October-2023</p>
+       </div>
+      </div>
+      <div class="user-personal-box-items">
+       <ion-icon name="star" class="main-icon"></ion-icon>
+      <div class="wrapper-txt-user-personal-box">
+        <p class="tiny-text">Your dreams</p>
+        <p class="txt-user-personal-box" >I Want To Be Developer/Engineer</p>
+       </div>
+      </div>
+     </div>
+     <div class="user-personal-box" id="textWhite">
+      <div class="user-personal-box-items">
+       <ion-icon name="school" class="main-icon"></ion-icon>
+       <div class="wrapper-txt-user-personal-box">
+        <p class="tiny-text">Kelas</p>
+        <p class="txt-user-personal-box" >X TKJ</p>
+       </div>
+      </div>
+      <div class="user-personal-box-items">
+       <ion-icon name="male-female" class="main-icon"></ion-icon>
+      <div class="wrapper-txt-user-personal-box">
+        <p class="tiny-text">Gender</p>
+        <p class="txt-user-personal-box" >Cowok</p>
+       </div>
+      </div>
+      <div class="user-personal-box-items">
+      <ion-icon name="musical-notes" class="main-icon"></ion-icon>
+      <div class="wrapper-txt-user-personal-box">
+        <p class="tiny-text">Favorite Song</p>
+        <p class="txt-user-personal-box" >Cash Cash - Hero</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="box-user-page" id="cards-color">
+     <div class="container-hobby-user">
+      <p class="text-hobby-user" id="textWhite">&nbsp;Hobby</p>
+      <div class="wrapper-hobby-user">
+       <div class="box-hobby-user" id="box-hobby-clr">
+        <p class="text-hobby-user" id="textWhite">Coding's</p>
+       </div>
+       <div class="box-hobby-user" id="box-hobby-clr">
+        <p class="text-hobby-user" id="textWhite">Game's</p>
+        </div>
+       <div class="box-hobby-user" id="box-hobby-clr">
+        <p class="text-hobby-user" id="textWhite">Sleep's</p>
+       </div>
+      </div>
+   </div>
+   </div>
+   <div class="box-user-page" id="cards-color">
+   <div class="title-box-input-2">
+    <p class="title-text-input" id="textWhite">My Bio</p>
+     </div>
+    <div class="descriptionText" id="myDescription">
+     <p class="bio-user">contoh deskripsi untuk bio pengguna website ini. ini hanyalah sempel contoh text nya</p>
+     </div>
+    </div>
+    <p id="bio" class="infoTxt"><ion-icon name="book"></ion-icon>&nbsp;Explore Properties</p>
+    <div class="footer-container">
+     <div class="footer-box">
+     <div class="wrapper-box-footer" id="cards-color">
+     <div class="wrapper-footer">
+      <div class="footer-box-text" id="myDescription" onclick="footerBoxOne()">
+        <li class="footer-li">
+         <a class="footer-text" id="textWhite">About Me</a>
+        </li>
+       </div>
+       <div class="footer-box-text" id="myDescription" onclick="footerBoxSecond()">
+        <li class="footer-li">
+         <a class="footer-text" id="textWhite">Privacy Policy</a>
+         </li>
+       </div>
+       <div class="footer-box-text" id="myDescription" onclick="footerBoxThird()">
+        <li class="footer-li">
+         <a class="footer-text" id="textWhite">About this Website?</a>
+        </li>
+       </div>
+      </div>
+       
+      <div class="wrapper-footer-2">
+       <div class="footer-box-text" id="myDescription" onclick="footerBoxFour()">
+        <li class="footer-li">
+         <a class="footer-text" id="textWhite">Terms Of Service</a>
+        </li>
+       </div>
+       <div class="footer-box-text" id="myDescription" onclick="footerBoxFive()">
+        <li class="footer-li">
+         <a class="footer-text" id="textWhite">Contact Us</a>
+        </li>
+       </div>
+       <div class="footer-box-text" id="myDescription" onclick="footerBoxSix()">
+        <li class="footer-li">
+         <a class="footer-text" id="textWhite">Help</a>
+        </li>
+       </div>
+       
+       </div>
+      </div>
+      
+     <footer id="footers">
+      <p class="footer-class" id="textWhite">&copy;Copyrights 2023 All Rights Reserved.</p>
+     </footer>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+  
+   <div class="container-explore">
+     <div class="header-explore" id="profileSection">
+      <div class="header-explore-wrapper">
+       <p class="title-explore" id="textWhite">Explore Properties</p>
+      <div class="headerMenu">
+       <div class="arrow-button">
+        <ion-icon name="arrow-back-sharp" class="arrow-menu" onclick="DeveloperMenu()" id="textWhite"></ion-icon>
+       </div>
+       <ion-icon name="moon" class="main-icon" id="moon" onclick="switchTheme()"></ion-icon>
+       <ion-icon name="person-add" class="main-icon" id="qr" onclick="opsi()"></ion-icon>
+       <ion-icon name="heart" class="main-icon" id="brush" onclick="opsi()"></ion-icon>
+       </div>
+      </div>
+     </div>
+     <div class="body-explore" id="containerId">
+      <div class="explore-box" id="myDescription">
+       <div class="arrow-explore-left" id="myKoleksi"></div>
+       <p class="explore-text" id="myKoleksi">Explore Text</p>
+      </div>
+      <div class="explore-box" id="myDescription">
+       <div class="arrow-explore-right" id="myKoleksi"></div>
+       <p class="explore-text" id="myKoleksi">Explore Text</p>
+      </div>
+      <div class="explore-box" id="myDescription">
+       <div class="arrow-explore-left" id="myKoleksi"></div>
+       <p class="explore-text" id="myKoleksi">Explore Text</p>
+      </div>
+      <div class="explore-box" id="myDescription">
+       <div class="arrow-explore-right" id="myKoleksi"></div>
+       <p class="explore-text" id="myKoleksi">Explore Text</p>
+      </div>
+      <div class="explore-box" id="myDescription">
+       <p class="explore-text" id="myKoleksi">Explore Text</p>
+      </div>
+      
+      <div class="privacy-policy">
+       <p class="text-privacy-policy" id="myKoleksi">Text Privacy Policy</p>
+      </div>
+      
+      <div class="container-terms-of-service">
+       <div class="terms-box">
+        <p class="terms-text" id="myKoleksi">Text Terms Of Service</p>
+       </div>
+      </div>
+      
+      <div class="container-help">
+       <div class="box-help">
+        <p class="text-help" id="myKoleksi">Text Help</p>
+       </div>
+      </div>
+      
+      <div class="container-contact-us">
+       <div class="box-contact-us">
+        <p class="text-contact-us" id="myKoleksi">text contact us</p>
+       </div>
+      </div>
+      <footer id="footers">
+       <p class="footer-class" id="textWhite">&copy;Copyrights 2023 All Rights Reserved.</p>
+      </footer>
+     </div>
+    </div>
+    
+    <div class="container-home" id="myDescription">
+     <div id="particles-js"></div>
+     <div class="content-home">
+      <div class="content-box-home" id="cards-color">
+        <div class="home-date-info" id="textWhite">
+         <p class="text-icon-date" id="textWhite">20.45</p>
+         <div class="text-box-day">
+          <p class="text-icon-day" id="textWhite">17 Agustus 2023</p>
+         </div>
+         <div class="box-info-widget">
+          <div class="box-text-widget">
+           <ion-icon name="person-sharp"></ion-icon>&nbsp;
+           <p class="user-name-widget" id="textWhite"></p>
+          </div>
+          <div class="box-text-widget">
+           <ion-icon name="location"></ion-icon>&nbsp;
+           <p class="user-name-widget" id="textWhite"></p>
+          </div>
+          <div class="box-text-widget">
+           <ion-icon name="heart">&nbsp;</ion-icon>&nbsp;
+           <p class="user-name-widget" id="textWhite"></p>
+          </div>
+         </div>
+        </div>
+        <div class="title-text-home">
+         <p class="text-icon-day" id="textWhite">Welcoming</p>
+         <p class="text-icon-day" id="textWhite">farid</p>
+        </div>
+       </div>
+       <div class="container-popup" id="cards-color">
+        <div class="box-img-popup">
+         <div class="profileImgBox">
+          <img src="Developericon.webp" class="imgProfile"/>
+         </div>
+        </div>
+        <div class="userInfo">
+         <p class="nameUser">Developer ~</p>
+         <p class="statusUser"><!-- text random --></p>
+        </div>
+        <div class="cta-popup">
+          <button disabled onclick="shufflePopup()">
+           <ion-icon name="shuffle" class=""></ion-icon>
+          </button>
+        </div>
+       </div>
+       <div class="container-sidebar-home-feature">
+        <div class="box-sidebar-home-feature" onclick="hideUi()" id="cards-color">
+          <ion-icon name="eye-off" class=""></ion-icon>
+        </div>
+        <div class="box-sidebar-home-feature" onclick="openSendEmail()" id="cards-color">
+          <ion-icon name="mail" class=""></ion-icon>
+        </div>
+        <div class="box-sidebar-home-feature" id="cards-color">
+          <ion-icon name="time" class="" onclick="checkLoginTime()"></ion-icon>
+          <div class="popup-time" id="cards-color">
+           <p class="descriptionText">User telah login 06 hari 05 jam 206 menit</p>
+           <div class="popup-time-arrow" id="cards-color"></div>
+          </div>
+        </div>
+        <div class="box-sidebar-home-feature" id="cards-color">
+          <ion-icon name="help" class=""></ion-icon>
+        </div>
+       </div>
+       <button id="cards-color" class="login-cta" onclick="openChat()" >Mulai</button>
+       <footer id="footers" class="footer">
+        <p class="footer-class" id="textWhite">This website is made only for learning in development a website, FaBot-Chat <u>17 July Version.</u>♡</p>
+       </footer>
+      </div>
+    </div>
+    
+    <div class="container-login">
+    <div class="box-login" id="cards-color">
+     <div class="pembungkus-login-page">
+     <div class="header-login">
+       <ion-icon name="arrow-back" class="main-icon" onclick="closeLogin()"></ion-icon>
+      </div>
+      <div class="login-page-1">
+       <ion-icon name="alert-circle" class="icon-alert-login" id="textWhite"></ion-icon>
+       <p class="title-login-text" id="textWhite">Wellcome To Fabot</p>
+       <div class="box-info-login-text" id="myDescription">
+        <p class="info-login-text"><br><strong>Tujuan website ini di buat adalah sebagai berikut :</strong><br><br><br>1. tempat untuk belajar mengembangkan simulasi chat antara user dan bot menggunakan bahasa pemrograman dasar dari javaScript yang saya pahami.<br><br>2. untuk belajar mengembangkan / memahami logika dan algoritma dalam sebuah program yang saya buat.<br><br>3. dan untuk belajar membuat fitur fitur umum yang ada dalam sebuah website.<br><br></p>
+       </div>
+       <div class="login-box-text" id="textWhite">
+        <p class="login-text" id="myDescription">Next</p>
+       </div>
+        <p class="deskripsi-login-text">kamu harus login terlebih dahulu untuk bisa mencoba chat bot ini</p>
+      </div>
+     </div>
+      
+     <div class="pembungkus-login-page">
+      <div class="login-page-2">
+       <div class="header-login">
+        <ion-icon name="arrow-back" class="main-icon" onclick="loginUndo()"></ion-icon>
+       </div>
+       <p class="title-login-text" id="textWhite">Sign in Up</p>
+       <div class="box-input-login" id="jawaban">
+        <ion-icon name="person" class="main-icon"></ion-icon>
+        <input type="text" placeholder="Masukan Nama" class="input-login" autocomplete="off">
+        <ion-icon name="information" class="main-icon"></ion-icon>
+       </div>
+       <div class="box-input-login" id="jawaban">
+        <ion-icon name="mail" class="main-icon"></ion-icon>
+        <input type="text" placeholder="Masukan Email" class="input-login" autocomplete="off">
+        <ion-icon name="information" class="main-icon"></ion-icon>
+       </div>
+       <div class="box-input-login" id="jawaban">
+        <ion-icon name="lock-closed" class="main-icon"></ion-icon>
+        <input type="text" placeholder="Masukan Password" class="input-login" autocomplete="off">
+        <ion-icon name="information" class="main-icon"></ion-icon>
+       </div>
+        <div class="login-box-text" id="textWhite">
+         <p class="login-text" id="myDescription">Login</p>
+        </div>
+         <p class="deskripsi-login-text">Ketikan nama, email dan password untuk profile mu di website ini</p>
+       </div>
+      </div>
+       
+     <div class="pembungkus-login-page">
+      <div class="login-page-3">
+       <div class="header-login">
+       <ion-icon name="arrow-back" class="main-icon" onclick="loginUndo()"></ion-icon>
+       </div>
+      <p class="title-login-text">About Me</p>
+      
+    <div class="wrapper-box-input-login">
+     <div class="wrapper-box-input">
+      <div class="title-box-input-2">
+       <ion-icon name="person" class="main-icon"></ion-icon><p class="title-text-input" id="textWhite">Nama kamu</p>
+      </div>
+      <div class="box-input-login-2" id="jawaban">
+       <input type="text" placeholder="Nama depan" class="input-login-2" autocomplete="off">
+      </div>
+     </div>
+      
+     <div class="wrapper-box-input">
+      <div class="title-box-input-2">
+      </div>
+      <div class="box-input-login-2" id="jawaban">
+       <input type="text" placeholder="Nama akhir" class="input-login-2" autocomplete="off">
+      </div>
+     </div>
+      
+     <div class="wrapper-box-input">
+      <div class="title-box-input-2">
+      <ion-icon name="calendar" class="main-icon"></ion-icon><p class="title-text-input" id="textWhite">Tanggal Ultah</p>
+      </div>
+      <div class="box-input-login-2" id="jawaban">
+      <input type="text" placeholder="Ketikan tanggal" class="input-login-2" autocomplete="off">
+      </div>
+     </div>
+      
+     <div class="wrapper-box-input">
+      <div class="title-box-input-2">
+      <ion-icon name="school" class="main-icon"></ion-icon><p class="title-text-input" id="textWhite">Kelas</p>
+      </div>
+      <div class="box-input-login-2" id="jawaban">
+       <input type="text" placeholder="Ketikan kelas" class="input-login-2" autocomplete="off">
+      </div>
+     </div>
+     
+     <div class="wrapper-box-input">
+      <div class="title-box-input-2">
+       <ion-icon name="musical-notes" class="main-icon"></ion-icon><p class="title-text-input" id="textWhite">Favorite Song</p>
+      </div>
+      <div class="box-input-login-2" id="jawaban">
+       <input type="text" placeholder="Ketikan sesuatu" class="input-login-2" autocomplete="off">
+      </div>
+     </div>
+     
+     <div class="wrapper-box-input">
+      <div class="title-box-input-2">
+       <ion-icon name="star" class="main-icon"></ion-icon><p class="title-text-input" id="textWhite">My Dreams</p>
+      </div>
+      <div class="box-input-login-2" id="jawaban">
+       <input type="text" placeholder="Ketikan sesuatu" class="input-login-2" autocomplete="off">
+       </div>
+      </div>
+     <div class="wrapper-box-input">
+      <div class="title-box-input-2">
+      <ion-icon name="male-female" class="main-icon"></ion-icon><p class="title-text-input" id="textWhite">Gender</p>
+      </div>
+      <div class="box-input-login-2" id="jawaban">
+       <input type="text" placeholder="Ketikan sesuatu" class="input-login-2" autocomplete="off">
+       </div>
+      </div>
+     <div class="wrapper-box-input">
+      <div class="title-box-input-2">
+      <ion-icon name="planet" class="main-icon"></ion-icon><p class="title-text-input" id="textWhite">Planet</p>
+      </div>
+      <div class="box-input-login-2" id="jawaban">
+       <input type="text" placeholder='Planet "Bekasi"' class="input-login-2" autocomplete="off">
+       </div>
+      </div>
+    </div>
+      
+    <div class="container-hobby-input">
+     <div class="title-box-input-2">
+      <ion-icon name="sparkles" class="main-icon"></ion-icon><p class="title-text-input" id="textWhite">Hobby</p>
+     </div>
+      <div class="wrapper-hobby-input">
+       <div class="box-input-hobby" id="jawaban">
+        <input type="text" placeholder="Music" class="input-login" autocomplete="off">
+       </div>
+       <div class="box-input-hobby" id="jawaban">
+        <input type="text" placeholder="Tidur" class="input-login" autocomplete="off">
+       </div>
+       <div class="box-input-hobby" id="jawaban">
+        <input type="text" placeholder="Games" class="input-login" autocomplete="off">
+       </div>
+      </div>
+     </div>
+     
+    <div class="container-hobby-input">
+     <div class="title-box-input-2">
+      <ion-icon name="text" class="main-icon"></ion-icon><p class="title-text-input" id="textWhite">Tuliskan bio untuk profile mu</p>
+     </div>
+      <div class="box-input-login" id="jawaban">
+       <input type="text" placeholder="Ketikan bio" id="bio-input-user" class="input-login" autocomplete="off"/>
+       <ion-icon name="information" class="main-icon"></ion-icon>
+       </div>
+     </div>
+      
+      <div class="login-box-text" id="textWhite">
+       <p class="login-text" id="myDescription">Done</p>
+      </div>
+       <p class="deskripsi-login-text">Tolong di isi dengan benar agar chatBot [ Fabot ] bisa mengenali kamu</p>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="style.js"></script>
+  <script src="swapBg.js"></script>
+  <script src="chatbot.js"></script>
+  <script src="particles.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+   (function(){
+      emailjs.init("yZzbJwytB-aSDSuZw");
+   })();
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+ </body>
+</html>
